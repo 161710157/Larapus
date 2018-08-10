@@ -108,6 +108,7 @@
         </main>
     </div>
     {{--  JS  --}}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>

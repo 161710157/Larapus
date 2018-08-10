@@ -26,13 +26,13 @@ class AuthorsController extends Controller
         'form_url' => route('authors.destroy', $author->id),
         'confirm_message' => 'Yakin mau menghapus ' . $author->name . '?'
     ]);
-})->make(true);
-}
-$html = $htmlBuilder
+    })->make(true);
+    }
+    $html = $htmlBuilder
     ->addColumn(['data' => 'name', 'name'=>'name', 'title'=>'Nama'])
     ->addColumn(['data' => 'action', 'name'=>'action', 'title'=>'', 'orderable'=>false, '
-searchable'=>false]);
-return view('authors.index')->with(compact('html'));
+    searchable'=>false]);
+    return view('authors.index')->with(compact('html'));
     }
 
     /**

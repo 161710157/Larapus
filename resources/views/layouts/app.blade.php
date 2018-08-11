@@ -44,7 +44,7 @@
                     <ul class="navbar-nav mr-auto">
                         @if (Auth::check())
                             <li class="nav-item {{ Request::is('home') ? 'active ' : '' }}">
-                                <a class="nav-link" href="{{ url('/home') }}">Dashboard</a>
+                                <a class="nav-link" href="{{ url('/home') }}">Dashboard </a>
                             </li>
                             @role('admin')
                             <li class="nav-item {{ Request::is('admin/authors') ? 'active ' : '' }}">
@@ -53,17 +53,18 @@
                              <li class="nav-item {{ Request::is('admin/books') ? 'active ' : '' }}">
                                 <a class="nav-link" href="{{ route('books.index') }}">Buku</a>
                             </li>
-                            {{--<li class="nav-item {{ Request::is('admin/members') ? 'active ' : '' }}">
-                                <a class="nav-link" href="{{ route('members.index') }}">Member</a>
+                    
+                            <li class="nav-item {{ Request::is('admin/members') ? 'active ' : '' }}">
+                            <a class="nav-link" href="{{ route('members.index') }}">Member</a>
                             </li>
-                            <li class="nav-item {{ Request::is('admin/statistics') ? 'active ' : '' }}">
+                           {{--  <li class="nav-item {{ Request::is('admin/statistics') ? 'active ' : '' }}">
                                 <a class="nav-link" href="{{ route('statistics.index') }}">Statistik</a>
                             </li>  --}}
                             @endrole
                             @if (auth()->check())
-                                {{--  <li class="nav-item {{ Request::is('settings/profile') ? 'active ' : '' }}">
+                                  <li class="nav-item {{ Request::is('settings/profile') ? 'active ' : '' }}">
                                     <a class="nav-link" href="{{ url('/settings/profile') }}">Profil</a>
-                                </li>  --}}
+                                </li> 
                             @endif
                         @endif
                     </ul>

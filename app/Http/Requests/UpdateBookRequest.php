@@ -9,8 +9,8 @@ use Illuminate\Foundation\Http\FormRequest;
     public function rules()
     {
     $rules = parent::rules();
-    $rules['title'] = 'required|unique:books,title,' . $this->route('book');
-    return $rules;
+    $rules['email'] = 'required|unique:users,email,' . $this->route('member');
+        return $rules;
     }
     }
 

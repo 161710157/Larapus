@@ -57,9 +57,9 @@
                             <li class="nav-item {{ Request::is('admin/members') ? 'active ' : '' }}">
                             <a class="nav-link" href="{{ route('members.index') }}">Member</a>
                             </li>
-                           {{--  <li class="nav-item {{ Request::is('admin/statistics') ? 'active ' : '' }}">
-                                <a class="nav-link" href="{{ route('statistics.index') }}">Statistik</a>
-                            </li>  --}}
+                            <li class="nav-item {{ Request::is('admin/statistics') ? 'active ' : '' }}">
+                                <a class="nav-link" href="{{ route('statistics.index') }}">Peminjaman</a>
+                            </li>  
                             @endrole
                             @if (auth()->check())
                                   <li class="nav-item {{ Request::is('settings/profile') ? 'active ' : '' }}">
@@ -115,6 +115,7 @@
     <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/selectize.min.js')}}"></script>
+    <script src="{{ asset('js/Chart.min.js') }}"></script>
     @yield('scripts')
    
 </body>

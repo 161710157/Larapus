@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddVerificationToUsers extends Migration
+class AddLastLoginToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,7 @@ class AddVerificationToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('verification_token')->nullable();
-            $table->boolean('is_verified')->default(0);
+            $table->timestamp('last_login')->after('remember_token')->nullable();
         });
     }
 
@@ -27,8 +26,7 @@ class AddVerificationToUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('verification_token');
-            $table->dropColumn('is_verified');
+            $table->dropColumn('last_login');
         });
     }
 }

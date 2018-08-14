@@ -19,12 +19,12 @@ class UserShouldVerified
     {
         $response = $next($request);
         if (Auth::check() && !Auth::user()->is_verified) {
-            Session::flash("flash_notification", [
-                "level"
-                => "warning",
-                "message" => "Akun Anda belum aktif. Silahkan klik pada link aktivasi yang telah kami kirim."
-                
-            ]);
+            Auth::logout();
+
+        Session::flash("flash_notification", [
+            "level"=> "warning",
+            "message" => "Akun Anda belum aktif. Silahkan klik pada link aktivasi yang telah kami kirim."
+        ]);
             return redirect('/login');
     }
             return $response;

@@ -1,3 +1,4 @@
+
 <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
 {!! Form::label('template', 'Gunakan template terbaru', ['class'=>'col-md-2 control-label']
 ) !!}
